@@ -48,7 +48,7 @@ signIn(String username , String pass , context) async{
             child: ListBody(
               children: <Widget>[
                 Text('Wrong username or password'),
-                Text('Please try again or connect our assistant service'),
+                Text('Please try again or contact our assistant service'),
               ],
             ),
           ),

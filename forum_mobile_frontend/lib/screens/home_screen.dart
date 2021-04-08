@@ -19,14 +19,14 @@ const text = 'Here we will see a little bit of the post text Here we will see a 
 const date = '2 hours ago';
 const likeNumber = 2;
 List<Post> posts =[];
-List<Widget> cards =[];
+
 class HomeScreen extends StatefulWidget {
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }
 Post p = Post();
 List<Post> postss =[];
-
+List<Widget> cards =[];
 class _HomeScreenState extends State<HomeScreen> {
   Future<List<Post>> getData(context) async {
     SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
@@ -78,7 +78,6 @@ class _HomeScreenState extends State<HomeScreen> {
 
 
     List<Widget> v=[];
-
 
      if(postss!=null){
 
@@ -148,7 +147,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 });
                 if(value.isEmpty){
                   setState(() {
-                    postss=workingList;
+                    getData(context);
+                    getPostCard(context);
                   });
                 }
 
